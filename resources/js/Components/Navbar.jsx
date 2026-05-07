@@ -24,7 +24,7 @@ export default function Navbar() {
             {/* Logo */}
             <div className="flex items-center">
                 <Link href="/">
-                    <img src={logo} alt="Fayyfir Logo" className="w-64 drop-shadow-lg" />
+                    <img src={logo} alt="Fayyfir Logo" className="w-36 md:w-64 drop-shadow-lg" />
                 </Link>
             </div>
 
@@ -95,7 +95,7 @@ export default function Navbar() {
             </button>
 
             {/* Mobile Menu */}
-            <div className={`fixed inset-x-0 top-20 flex flex-col bg-blue-600 px-6 pb-8 transition-all duration-300 lg:hidden overflow-y-auto max-h-[calc(100vh-80px)] ${isMenuOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-4 opacity-0'}`}>
+            <div className={`fixed inset-x-0 top-16 flex flex-col bg-blue-600 px-6 pb-8 transition-all duration-300 lg:hidden overflow-y-auto max-h-[calc(100vh-80px)] ${isMenuOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-4 opacity-0'}`}>
                 {/* Mobile Search */}
                 <div className="my-6 flex items-center rounded-lg bg-white/10 px-4 py-3 border border-white/20">
                     <svg className="h-5 w-5 shrink-0 text-white/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

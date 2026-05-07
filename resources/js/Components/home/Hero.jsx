@@ -115,7 +115,7 @@ export default function Hero() {
                 .animate-delay-200 { animation-delay: 0.2s; }
                 .animate-delay-500 { animation-delay: 0.5s; }
             `}</style>
-            <button className="absolute z-10 bottom-40 -translate-x-1/2 left-1/2 rounded-full bg-blue-600 text-white px-8 py-4 text-lg font-semibold transition-all hover:bg-blue-700 hover:shadow-xl active:scale-95">
+            <button className="text-nowrap absolute z-10 bottom-40 -translate-x-1/2 left-1/2 rounded-full bg-blue-600 text-white px-8 py-4 text-lg font-semibold transition-all hover:bg-blue-700 hover:shadow-xl active:scale-95">
                 Explore Our Products
             </button>
         </div>
