@@ -39,7 +39,7 @@ export default function Hero() {
     ];
 
     return (
-        <div className="relative h-[calc(100vh-80px)] w-full overflow-hidden">
+        <div className="relative h-screen w-full overflow-hidden">
             <Swiper
                 spaceBetween={0}
                 effect={'fade'}
@@ -71,10 +71,10 @@ export default function Hero() {
                             {/* Content */}
                             <div className="relative flex h-full items-center justify-center px-[5%] text-center text-white">
                                 <div className="max-w-3xl space-y-6">
-                                    <h1 className="animate-fade-up text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
+                                    <h1 className="animate-fade-up text-4xl font-bold tracking-tight md:text-6xl lg:text-6xl">
                                         {slide.title}
                                     </h1>
-                                    <p className="animate-fade-up animate-delay-200 text-lg text-slate-200 md:text-xl lg:text-2xl">
+                                    <p className="animate-fade-up animate-delay-200 text-lg text-slate-200 md:text-xl">
                                         {slide.description}
                                     </p>
                                     <div className="animate-fade-up animate-delay-500 pt-4">
@@ -115,7 +115,7 @@ export default function Hero() {
                 .animate-delay-200 { animation-delay: 0.2s; }
                 .animate-delay-500 { animation-delay: 0.5s; }
             `}</style>
-            <button className="text-nowrap absolute z-10 bottom-40 -translate-x-1/2 left-1/2 rounded-full bg-blue-600 text-white px-8 py-4 text-lg font-semibold transition-all hover:bg-blue-700 hover:shadow-xl active:scale-95">
+            <button className="text-nowrap absolute z-10 bottom-40 -translate-x-1/2 left-1/2 rounded-full bg-blue-600 text-white px-6 py-3 text-md font-semibold transition-all hover:bg-blue-700 hover:shadow-xl active:scale-95">
                 Explore Our Products
             </button>
         </div>

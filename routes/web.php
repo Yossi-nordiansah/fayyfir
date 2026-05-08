@@ -14,6 +14,12 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/product/{category}', function ($category) {
+    return Inertia::render('DetailProduct', [
+        'categoryName' => urldecode($category)
+    ]);
+})->name('product.detail');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

@@ -20,11 +20,11 @@ export default function Navbar() {
     const [isProductOpen, setIsProductOpen] = useState(false);
 
     return (
-        <nav className="sticky top-0 z-50 flex py-2 items-center justify-between bg-gradient-to-r from-blue-600 to-sky-500 px-[5%] text-white shadow-lg transition-all duration-300">
+        <nav className="sticky top-0 z-50 flex py-2 items-center justify-between bg-gradient-to-r from-blue-600 to-sky-500 px-[5%] text-sm text-white shadow-lg transition-all duration-300">
             {/* Logo */}
             <div className="flex items-center">
                 <Link href="/">
-                    <img src={logo} alt="Fayyfir Logo" className="w-36 md:w-64 drop-shadow-lg" />
+                    <img src={logo} alt="Fayyfir Logo" className="w-36 md:w-44 drop-shadow-lg" />
                 </Link>
             </div>
 
@@ -78,9 +78,6 @@ export default function Navbar() {
                 </li>
                 <li className="relative py-2 font-medium transition-colors hover:text-sky-100 after:absolute after:bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all hover:after:w-full">
                     <Link href="/about">About Us</Link>
-                </li>
-                <li className="relative py-2 font-medium transition-colors hover:text-sky-100 after:absolute after:bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all hover:after:w-full">
-                    <Link href="/contact">Contact Us</Link>
                 </li>
             </ul>
 

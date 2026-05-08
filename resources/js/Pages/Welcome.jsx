@@ -1,45 +1,27 @@
 import { Head, Link } from '@inertiajs/react';
-import Navbar from '@/Components/Navbar';
 import Hero from '@/Components/home/Hero';
 import Catalogue from '@/Components/home/Catalogue';
+import StatsCounter from '@/Components/home/StatsCounter';
 import CompanyValues from '@/Components/home/CompanyValues';
+import CallToAction from '@/Components/home/CallToAction';
 import Layout from '@/Components/home/Layout';
+import MainLayout from '@/Layouts/MainLayout';
 
-export default function Welcome({ auth, laravelVersion, phpVersion }) {
-    const handleImageError = () => {
-        document
-            .getElementById('screenshot-container')
-            ?.classList.add('!hidden');
-        document.getElementById('docs-card')?.classList.add('!row-span-1');
-        document
-            .getElementById('docs-card-content')
-            ?.classList.add('!flex-row');
-        document.getElementById('background')?.classList.add('!hidden');
-    };
-
+const Welcome = ({ auth, laravelVersion, phpVersion }) => {
     return (
         <>
             <Head title="Welcome" />
-            <div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-                <img
-                    id="background"
-                    className="absolute -left-20 top-0 max-w-[877px]"
-                    src="https://laravel.com/assets/img/welcome/background.svg"
-                />
-                <div className="relative flex min-h-screen flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-                    <div className="relative w-full">
-            <Navbar />
             <Hero />
             <Layout>
                 <Catalogue />
+                <StatsCounter />
                 <CompanyValues />
+                <CallToAction />
             </Layout>
-                        <footer className="py-16 text-center text-sm text-black dark:text-white/70">
-                            Laravel v{laravelVersion} (PHP v{phpVersion})
-                        </footer>
-                    </div>
-                </div>
-            </div>
         </>
     );
 }
+
+Welcome.layout = page => <MainLayout children={page} />;
+
+export default Welcome;
