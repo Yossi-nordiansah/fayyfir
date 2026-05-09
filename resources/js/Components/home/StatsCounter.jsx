@@ -57,7 +57,7 @@ const CountUp = ({ end, duration = 2000 }) => {
 export default function StatsCounter() {
     useEffect(() => {
         AOS.init({
-            duration: 1000,
+            duration: 500,
             once: true,
         });
     }, []);

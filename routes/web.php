@@ -20,6 +20,15 @@ Route::get('/product/{category}', function ($category) {
     ]);
 })->name('product.detail');
 
+Route::get('/gallery', function () {
+    return Inertia::render('Gallery');
+})->name('gallery');
+
+Route::get('/about', function () {
+    return Inertia::render('AboutUs');
+})->name('about');
+
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

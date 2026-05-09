@@ -1,22 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from '@inertiajs/react';
 import logo from '../Assets/images/logo-footer.png';
+import { productsData } from '@/Assets/data/productsData';
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const products = [
-        "Coconut Derivates Products",
-        "Charcoal Briquette",
-        "Spices",
-        "Plam Cooking Oil",
-        "Cocoa Powder",
-        "Raw Cosmetic",
-        "Coffee Been",
-        "Handicraft",
-        "Agarwood & Dehn Oud"
-    ];
-
+    const products = Object.entries(productsData).map(([title, data]) => ({ title, ...data }));
+    console.log(products);
     const [isProductOpen, setIsProductOpen] = useState(false);
 
     return (
@@ -48,10 +38,10 @@ export default function Navbar() {
                         {products.map((product, index) => (
                             <li key={index}>
                                 <Link 
-                                    href={`/products/${product.toLowerCase().replace(/ /g, '-')}`}
+                                    href={route('product.detail', { category: product.slug })}
                                     className="block px-6 py-3 text-sm text-slate-700 transition-colors hover:bg-slate-50 hover:pl-8 hover:text-blue-600"
                                 >
-                                    {product}
+                                    {product.title}
                                 </Link>
                             </li>
                         ))}
@@ -106,7 +96,7 @@ export default function Navbar() {
                     />
                 </div>
 
-                <Link href="/" className="py-3 text-lg font-medium border-b border-white/10">Home</Link>
+                <Link href="/" onClick={() => setIsMenuOpen(false)} className="py-3 text-lg font-medium border-b border-white/10">Home</Link>
                 
                 {/* Mobile Product Accordion */}
                 <div className="flex flex-col border-b border-white/10">
@@ -123,18 +113,18 @@ export default function Navbar() {
                         {products.map((product, index) => (
                             <Link 
                                 key={index}
-                                href={`/products/${product.toLowerCase().replace(/ /g, '-')}`}
+                                href={route('product.detail', { category: product.slug })}
+                                onClick={() => { setIsMenuOpen(false); setIsProductOpen(false); }}
                                 className="pl-4 py-2 text-white/80 hover:text-white"
                             >
-                                {product}
+                                {product.title}
                             </Link>
                         ))}
                     </div>
                 </div>
 
-                <Link href="/gallery" className="py-4 text-lg font-medium border-b border-white/10">Gallery</Link>
-                <Link href="/about" className="py-4 text-lg font-medium border-b border-white/10">About Us</Link>
-                <Link href="/contact" className="py-4 text-lg font-medium border-b border-white/10">Contact Us</Link>
+                <Link href="/gallery" onClick={() => setIsMenuOpen(false)} className="py-4 text-lg font-medium border-b border-white/10">Gallery</Link>
+                <Link href="/about" onClick={() => setIsMenuOpen(false)} className="py-4 text-lg font-medium border-b border-white/10">About Us</Link>
             </div>
         </nav>
     );

@@ -1,35 +1,18 @@
 import React, { useEffect } from 'react';
-import { Link } from '@inertiajs/react';
-import defaultImage from '../../Assets/images/logo-footer.png';
-import coconutImg from '../../Assets/images/coconut-1.jpg';
-import charcoalImg from '../../Assets/images/charcoal.jpg';
-import spicesImg from '../../Assets/images/spices.jpg';
-import palmOilImg from '../../Assets/images/palm-oil.jpg';
-import cocoaImg from '../../Assets/images/cacao-powder.jpg';
-import rawCosmeticImg from '../../Assets/images/raw-cosmetic.jpg';
-import coffeeImg from '../../Assets/images/coffe-been.jpg';
-import handicraftImg from '../../Assets/images/Handicraft.jpg';
-import gaharuImg from '../../Assets/images/Gaharu.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import CatalogueCard from "./CatalogueCard";
+import { productsData } from '../../Assets/data/productsData';
 
-const catalogueItems = [
-    { title: "Coconut Derivates Products", image: coconutImg },
-    { title: "Charcoal Briquette", image: charcoalImg },
-    { title: "Spices", image: spicesImg },
-    { title: "Palm Cooking Oil", image: palmOilImg },
-    { title: "Cocoa Powder", image: cocoaImg },
-    { title: "Raw Cosmetic", image: rawCosmeticImg },
-    { title: "Coffee Bean", image: coffeeImg },
-    { title: "Handicraft", image: handicraftImg },
-    { title: "Agarwood & Dehn Oud", image: gaharuImg },
-];
+const catalogueItems = Object.entries(productsData).map(([title, data]) => ({
+    title,
+    image: data.banner,
+}));
 
 export default function Catalogue() {
     useEffect(() => {
         AOS.init({
-            duration: 1000,
+            duration: 500,
             once: true,
             easing: 'ease-in-out',
         });
@@ -47,7 +30,6 @@ export default function Catalogue() {
                         Explore our wide range of premium quality products sourced from the finest tropical resources.
                     </p>
                 </div>
-
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {catalogueItems.map((item, index) => (
                         <CatalogueCard 

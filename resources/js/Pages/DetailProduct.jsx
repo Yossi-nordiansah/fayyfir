@@ -5,10 +5,11 @@ import MainLayout from '@/Layouts/MainLayout';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { productsData, defaultData } from '@/Assets/data/productsData';
+import SubProductCard from '@/Components/products/SubProductCard';
 
 const DetailProduct = ({ categoryName }) => {
     useEffect(() => {
-        AOS.init({ duration: 1000, once: true });
+        AOS.init({ duration: 500, once: true });
         window.scrollTo(0, 0);
     }, []);
 
@@ -35,7 +36,7 @@ const DetailProduct = ({ categoryName }) => {
                             <span className="text-white/60">Product Detail</span>
                         </nav>
                         
-                        <h1 className="text-4xl md:text-6xl lg:text-8xl font-black text-white tracking-tighter uppercase leading-[0.9]">
+                        <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-[0.9]">
                             {categoryName}
                         </h1>
                         

@@ -7,36 +7,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
-
-// Import Images
-import hero1 from '../../Assets/images/hero1.jpg';
-import hero2 from '../../Assets/images/hero2.jpg';
-import hero3 from '../../Assets/images/hero3.jpg';
-import hero4 from '../../Assets/images/hero4.jpg';
+import slides from '../../Assets/data/slidesHeroData';
 
 export default function Hero() {
-    const slides = [
-        {
-            image: hero1,
-            title: "Premium Coconut Derivatives",
-            description: "Supplying high-quality coconut products to the global market."
-        },
-        {
-            image: hero2,
-            title: "Sustainable Charcoal Briquettes",
-            description: "Eco-friendly energy solutions for professional and domestic use."
-        },
-        {
-            image: hero3,
-            title: "Authentic Spices & Spices",
-            description: "Bringing the finest tropical flavors from Indonesia to the world."
-        },
-        {
-            image: hero4,
-            title: "Quality Palm Cooking Oil",
-            description: "Pure and healthy cooking oil for a better culinary experience."
-        }
-    ];
 
     return (
         <div className="relative h-screen w-full overflow-hidden">
@@ -115,9 +88,9 @@ export default function Hero() {
                 .animate-delay-200 { animation-delay: 0.2s; }
                 .animate-delay-500 { animation-delay: 0.5s; }
             `}</style>
-            <button className="text-nowrap absolute z-10 bottom-40 -translate-x-1/2 left-1/2 rounded-full bg-blue-600 text-white px-6 py-3 text-md font-semibold transition-all hover:bg-blue-700 hover:shadow-xl active:scale-95">
+            <a href="#catalogue" className="text-nowrap absolute z-10 bottom-40 -translate-x-1/2 left-1/2 rounded-full bg-blue-600 text-white px-6 py-3 text-md font-semibold transition-all hover:bg-blue-700 hover:shadow-xl active:scale-95">
                 Explore Our Products
-            </button>
+            </a>
         </div>
     );
 }

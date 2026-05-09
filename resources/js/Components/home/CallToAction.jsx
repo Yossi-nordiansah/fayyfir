@@ -46,7 +46,7 @@ export default function CallToAction() {
                             </Link>
 
                             <Link 
-                                href="/about" 
+                                href="/gallery" 
                                 className="inline-flex items-center justify-center px-6 py-4 rounded-2xl border-2 border-white/20 text-white font-bold overflow-hidden transition-all duration-300 hover:bg-white hover:text-slate-900 hover:border-white cursor-pointer"
                             >
                                 See Gallery

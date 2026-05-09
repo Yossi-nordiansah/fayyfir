@@ -31,7 +31,7 @@ export default function Footer() {
             <div className="container relative z-10 mx-auto px-[5%]">
                 <div className="grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-4">
                     {/* Brand Section */}
-                    <div className="space-y-8" data-aos="fade-up">
+                    <div className="space-y-8">
                         <Link href="/">
                             <img src={logo} alt="Fayyfir Logo" className="w-56 transition-transform duration-300 hover:scale-105" />
                         </Link>
@@ -55,7 +55,7 @@ export default function Footer() {
                     </div>
 
                     {/* Quick Links */}
-                    <div className="lg:pl-8" data-aos="fade-up" data-aos-delay="100">
+                    <div className="lg:pl-8">
                         <h3 className="mb-8 text-lg font-bold text-white tracking-wider uppercase">Navigation</h3>
                         <ul className="space-y-4">
                             {['Home', 'About Us', 'Gallery', 'Contact Us'].map((item) => (
@@ -73,7 +73,7 @@ export default function Footer() {
                     </div>
 
                     {/* Products Grid */}
-                    <div data-aos="fade-up" data-aos-delay="200">
+                    <div>
                         <h3 className="mb-8 text-lg font-bold text-white tracking-wider uppercase">Top Categories</h3>
                         <ul className="grid grid-cols-1 gap-4">
                             {products.slice(0, 6).map((product) => (
@@ -90,7 +90,7 @@ export default function Footer() {
                     </div>
 
                     {/* Contact Info */}
-                    <div data-aos="fade-up" data-aos-delay="300">
+                    <div>
                         <h3 className="mb-8 text-lg font-bold text-white tracking-wider uppercase">Contact Us</h3>
                         <div className="space-y-6">
                             <div className="flex gap-4">
