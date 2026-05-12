@@ -44,7 +44,7 @@ return [
             'transaction_mode' => 'DEFERRED',
         ],
 
-        'mysql' => [
+        'fayyfirapp' => [
             'driver' => 'mysql',
             'url' => env('DB_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
@@ -114,6 +114,18 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
+        'catalogue' => [
+        'driver' => 'mysql',
+        'host' => env('DB_SECOND_HOST', '127.0.0.1'),
+        'port' => env('DB_SECOND_PORT', '3306'),
+        'database' => env('DB_SECOND_DATABASE', 'forge'),
+        'username' => env('DB_SECOND_USERNAME', 'forge'),
+        'password' => env('DB_SECOND_PASSWORD', ''),
+        'charset' => 'utf8mb4',
+        'collation' => 'utf8mb4_unicode_ci',
+        'prefix' => '',
+    ],
+
     ],
 
     /*
@@ -179,18 +191,6 @@ return [
             'backoff_cap' => env('REDIS_BACKOFF_CAP', 1000),
         ],
 
-    ],
-
-    'mysql_second' => [
-        'driver' => 'mysql',
-        'host' => env('DB_SECOND_HOST', '127.0.0.1'),
-        'port' => env('DB_SECOND_PORT', '3306'),
-        'database' => env('DB_SECOND_DATABASE', 'forge'),
-        'username' => env('DB_SECOND_USERNAME', 'forge'),
-        'password' => env('DB_SECOND_PASSWORD', ''),
-        'charset' => 'utf8mb4',
-        'collation' => 'utf8mb4_unicode_ci',
-        'prefix' => '',
     ],
 
 ];

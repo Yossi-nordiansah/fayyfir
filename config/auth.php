@@ -44,6 +44,20 @@ return [
         ],
     ],
 
+    'guards' => [
+
+    'web' => [
+        'driver' => 'session',
+        'provider' => 'users',
+    ],
+
+    'catalogue' => [
+        'driver' => 'session',
+        'provider' => 'catalogue_users',
+    ],
+
+],
+
     /*
     |--------------------------------------------------------------------------
     | User Providers
@@ -72,6 +86,20 @@ return [
         //     'table' => 'users',
         // ],
     ],
+
+    'providers' => [
+
+    'users' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\fayyfirapp\User::class,
+    ],
+
+    'catalogue_users' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\catalogue\User::class,
+    ],
+
+],
 
     /*
     |--------------------------------------------------------------------------
